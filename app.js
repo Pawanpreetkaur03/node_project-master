@@ -17,6 +17,12 @@ app.post('/response', (req, res)=>{
     res.send('This is the post response in Restful style');
 });
 
+//Route with query parameter
+app.get('/search', (req, res) =>{
+       const query = req.query.q;
+       res.send(`Search query is ${query}`);
+});
+
 //Start our server, listening on port 8080
 app.listen(PORT, () =>{
     console.log(`Connected on port ${PORT}`);
